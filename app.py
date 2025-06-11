@@ -147,7 +147,9 @@
 #     st.session_state.messages.append({"role": "assistant", "content": result})
 
 
-
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import tempfile
 from bs4 import BeautifulSoup
