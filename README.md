@@ -29,11 +29,7 @@ This repository contains a **Retrieval-Augmented Generation (RAG) Chatbot** buil
 ### **1. Prerequisites**
 - Python 3.11
 - Azure OpenAI account with API keys
-- Required Python libraries (see 
-
-requirements.txt
-
-)
+- Required Python libraries (see requirements.txt)
 
 ### **2. Clone the Repository**
 ```bash
@@ -48,11 +44,7 @@ pip install -r requirements.txt
 ```
 
 ### **4. Configure Environment Variables**
-Create a 
-
-.env
-
- file in the root directory and add the following variables:
+Create a .env file in the root directory and add the following variables:
 ```plaintext
 EMBEDDING_MODEL=text-embedding-ada-002
 COMPLETION_MODEL=gpt-4
@@ -62,14 +54,8 @@ API_KEY=<your-azure-api-key>
 ```
 
 ### **5. Prepare Data**
-- Place your documents (PDFs, Word files) in the 
-
-assets
-
- folder.
-- Configure the base URL for web scraping in 
-
-web_ingestion.py
+- Place your documents (PDFs, Word files) in the assets folder.
+- Configure the base URL for web scraping in web_ingestion.py
 
  (default: `https://www.angelone.in/support`).
 
@@ -155,19 +141,11 @@ vectorstore
 ## **Troubleshooting**
 
 ### **1. Missing Vectorstore**
-- Ensure the 
-
-vectorstore
-
- folder exists and is writable.
+- Ensure the vectorstore folder exists and is writable.
 - Run the ingestion process from the sidebar or manually trigger it.
 
 ### **2. Environment Variable Issues**
-- Verify that the 
-
-.env
-
- file is correctly configured.
+- Verify that the .env file is correctly configured.
 - Ensure the Azure OpenAI API key and endpoint are valid.
 
 ### **3. Dependency Errors**
@@ -175,9 +153,7 @@ vectorstore
 - Use a virtual environment to avoid conflicts.
 
 ### **4. Web Scraping Issues**
-- Check the base URL in 
-
-web_ingestion.py
+- Check the base URL in web_ingestion.py
 
 .
 - Ensure the target website allows scraping and is accessible.
