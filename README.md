@@ -52,10 +52,11 @@ API_VERSION=2024-02-15-preview
 AZURE_ENDPOINT=https://<your-azure-endpoint>.openai.azure.com/
 API_KEY=<your-azure-api-key>
 ```
+[Modified for streamlit use by replacing with st.secrets: [https://docs.streamlit.io/develop/api-reference/connections/st.secrets]([url](https://docs.streamlit.io/develop/api-reference/connections/st.secrets))]
 
 ### **5. Prepare Data**
 - Place your documents (PDFs, Word files) in the assets folder.
-- Configure the base URL for web scraping in web_ingestion.py
+- Configure the base URL for web scraping in web_ingestion.py[Not in use now, replaced by unified_ingestion.py file]
 
  (default: `https://www.angelone.in/support`).
 
@@ -86,8 +87,8 @@ rag-chatbot/
 │
 ├── app.py                     # Main Streamlit app
 ├── unified_ingestion.py       # Unified ingestion manager for documents and web pages
-├── doc_ingestion.py           # Handles document ingestion (PDFs, Word files)
-├── web_ingestion.py           # Handles web scraping and ingestion
+├── doc_ingestion.py           # Handles document ingestion (PDFs, Word files),  Not in use now, replaced by unified_ingestion.py file.
+├── web_ingestion.py           # Handles web scraping and ingestion, Not in use now, replaced by unified_ingestion.py file.
 ├── assets/                    # Folder for storing documents
 ├── vectorstore/               # Folder for storing vectorstore data
 ├── requirements.txt           # Python dependencies
@@ -120,14 +121,14 @@ unified_ingestion.py
 doc_ingestion.py
 
 **
-- Processes documents (PDFs, Word files) and splits them into chunks for embedding. Not in use now.
+- Processes documents (PDFs, Word files) and splits them into chunks for embedding. Not in use now, replaced by unified_ingestion.py file.
 
 ### **4. 
 
 web_ingestion.py
 
 **
-- Crawls web pages and extracts clean text for embedding. Not in use now.
+- Crawls web pages and extracts clean text for embedding. Not in use now, replaced by unified_ingestion.py file.
 
 ### **5. 
 
@@ -154,8 +155,6 @@ vectorstore
 
 ### **4. Web Scraping Issues**
 - Check the base URL in web_ingestion.py
-
-.
 - Ensure the target website allows scraping and is accessible.
 
 ---
