@@ -187,17 +187,17 @@ st.set_page_config(page_title="📚 RAG Chatbot", layout="centered")
 def initialize_components():
     """Initialize embeddings and LLM - cached for performance"""
     embeddings = AzureOpenAIEmbeddings(
-        model=os.getenv("EMBEDDING_MODEL"),
-        api_version=os.getenv("API_VERSION"),
-        azure_endpoint=os.getenv("AZURE_ENDPOINT"),
-        api_key=os.getenv("API_KEY")
+        model=st.secrets["EMBEDDING_MODEL"],
+        api_version=st.secrets["API_VERSION"],
+        azure_endpoint=st.secrets["AZURE_ENDPOINT"],
+        api_key=st.secrets["API_KEY"]
     )
 
     llm = AzureChatOpenAI(
-        model=os.getenv("COMPLETION_MODEL"),
-        api_version=os.getenv("API_VERSION"),
-        azure_endpoint=os.getenv("AZURE_ENDPOINT"),
-        api_key=os.getenv("API_KEY"),
+        model=st.secrets["COMPLETION_MODEL"],
+        api_version=st.secrets["API_VERSION"],
+        azure_endpoint=st.secrets["AZURE_ENDPOINT"],
+        api_key=st.secrets["API_KEY"],
         temperature=0
     )
     
