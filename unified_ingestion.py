@@ -16,6 +16,8 @@ from langchain_openai import AzureOpenAIEmbeddings
 from langchain_chroma import Chroma
 from dotenv import load_dotenv
 
+import streamlit as st
+
 load_dotenv()
 
 class UnifiedIngestionManager:
@@ -29,10 +31,10 @@ class UnifiedIngestionManager:
         self.max_pages = 15
         
         self.embeddings = AzureOpenAIEmbeddings(
-            model=os.getenv("EMBEDDING_MODEL"),
-            api_version=os.getenv("API_VERSION"),
-            azure_endpoint=os.getenv("AZURE_ENDPOINT"),
-            api_key=os.getenv("API_KEY")
+            model=st.secrets["EMBEDDING_MODEL"],
+            api_version=st.secrets["API_VERSION"],
+            azure_endpoint=st.secrets["AZURE_ENDPOINT"],
+            api_key=st.secrets["API_KEY"]
         )
         
         # Ensure directories exist
